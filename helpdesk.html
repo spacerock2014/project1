@@ -1,14 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Lab02-SWH03276">
-    <meta name="keywords" content="HTML, CSS, Web Techonoly project">
-    <meta name="author" content="Nguyen Minh Quang">
-    <title>lab02</title>
-<style>
-body {
-    font-family: Verdana, sans-serif;
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="description" content="Demonstrates some basic HTML form elements" />
+  <meta name="keywords" content="HTML, Form, tags" />
+  <meta name="author" content="Minh Quang"  />
+  <title>CWA Help Desk Appointment</title>
 </head>
+<body>
+<h1>CWA Helpdesk Appointement</h1>
+
+<form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+	<p><label for="owner">Owner&apos;s Name</label> 
+		<input type="text" name= "owner" id="owner" required="required"/>
+	</p>
+	<p><label for="email">Email</label> 
+		<!--Use an HTML5 email control -->
+      <input type="email" name= "email" id="email" required="required"/>
+	</p>
+	<fieldset>
+		<legend>Cat Information Details</legend>
+		<p><label for="catname">Cat&apos;s Name</label> 
+			<input type="text" name= "catname" id="catname" maxlength="20" size="10" required="required"/>
+		</p>
+		<p><label for="breed">Breed</label> 
+			<select name="breed" id="breed">
+				<option value="british">British Shorthair</option>			
+				<option value="burmese">Burmese</option>
+				<option value="manx">Manx</option>
+				<option value="ragdoll">Ragdoll</option>
+				<option value="russian">Russian Blue</option>
+				<option value="siamese">Siamese</option>
+				<option value="other">Other</option>
+			</select>
+		</p>
+		<p><label for="dob">Date of Birth</label> 
+			<input type="date" name= "dob" id="dob" placeholder="dd-mm-yyyy" maxlength="10" size="10"/>
+		</p>
+		<fieldset>
+			<legend>Sex</legend>
+			<p><label for="male">Male</label> 
+				<input type="radio" id="male" name="sex" value="male"/>
+			</p>
+			<p><label for="female">Female</label> 
+				<input type="radio" id="female" name="sex" value="female"/>
+			</p>
+		</fieldset>
+		<fieldset>
+			<legend>Competition Categories</legend>
+			<p>Select which categories your would like your cat entered</p>
+			<p><label for="bb">Best of Breed</label> 
+				<input type="checkbox" id="bb" name="category[]" value="best" checked="checked"/>
+			</p>
+			<p><label for="cute">Cutest</label> 
+				<input type="checkbox" id="cute" name="category[]" value="cute"/>
+			</p>
+			<p><label for="ugly">Ugliest</label> 
+				<input type="checkbox" id="ugly" name="category[]" value="ugly"/>
+			</p>
+		</fieldset>
+		<p><label for="comments">Comments</label>
+			<textarea id="comments" name="comments" rows="4" cols="40"></textarea>
+		</p>
+	</fieldset>
+	  
+	<input type= "submit" value="Register"/>
+	<input type= "reset" value="Reset Form"/>
+</form>
+</body>
+</html>
