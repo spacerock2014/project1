@@ -1,67 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang=en>
 <head>
-  <meta charset="utf-8" />
-  <meta name="description" content="Demonstrates some basic HTML form elements" />
-  <meta name="keywords" content="HTML, Form, tags" />
-  <meta name="author" content="Minh Quang"  />
-  <title>CWA Help Desk Appointment</title>
+  <meta charset="utf-8">
+  <meta name="description" content="idk">
+  <meta name="keywords" content="HTML, Form, tags">
+  <meta name="Minh Quang" content="un">
+  <title>HTML Form</title>
 </head>
 <body>
+  <a href="http://www.swin.edu.au" target="_blank">
+    <img src="https://files.catbox.moe/8rikfn.jpg" alt="Swinburne Logo" width="150">
+  </a>
 
-<a href="https://www.swinburne.edu.au/"><img src="logo.png" alt="hello hi idk";"></a>
-<h1>CWA Helpdesk Appointement</h1>
-	<p>The Help Desk is located in ATC620. Open 10:30 to 19:00 Monday to Friday</p>
-	<p>Check Blackboard for when CWA tutors will be there.</p>
+  <h1>CWA Help Desk Appointment</h1>
 
-	<fieldset>
-		<legend>Student details</legend>
-		<p><label for="studentname">Student&apos;s Name</label> 
-			<input type="text" name= "studentname" id="studentname" maxlength="10" minlength="7" size="10" required="required"/>
-		</p>
-		<p><label for="breed">Breed</label> 
-			<select name="breed" id="breed">
-				<option value="british">British Shorthair</option>			
-				<option value="burmese">Burmese</option>
-				<option value="manx">Manx</option>
-				<option value="ragdoll">Ragdoll</option>
-				<option value="russian">Russian Blue</option>
-				<option value="siamese">Siamese</option>
-				<option value="other">Other</option>
-			</select>
-		</p>
-		<p><label for="dob">Date of Birth</label> 
-			<input type="date" name= "dob" id="dob" placeholder="dd-mm-yyyy" maxlength="10" size="10"/>
-		</p>
-		<fieldset>
-			<legend>Sex</legend>
-			<p><label for="male">Male</label> 
-				<input type="radio" id="male" name="sex" value="male"/>
-			</p>
-			<p><label for="female">Female</label> 
-				<input type="radio" id="female" name="sex" value="female"/>
-			</p>
-		</fieldset>
-		<fieldset>
-			<legend>Competition Categories</legend>
-			<p>Select which categories your would like your cat entered</p>
-			<p><label for="bb">Best of Breed</label> 
-				<input type="checkbox" id="bb" name="category[]" value="best" checked="checked"/>
-			</p>
-			<p><label for="cute">Cutest</label> 
-				<input type="checkbox" id="cute" name="category[]" value="cute"/>
-			</p>
-			<p><label for="ugly">Ugliest</label> 
-				<input type="checkbox" id="ugly" name="category[]" value="ugly"/>
-			</p>
-		</fieldset>
-		<p><label for="comments">Comments</label>
-			<textarea id="comments" name="comments" rows="4" cols="40"></textarea>
-		</p>
-	</fieldset>
-	  
-	<input type= "submit" value="Register"/>
-	<input type= "reset" value="Reset Form"/>
-</form>
+  <p>The Help Desk is located in ATC620. Open 10:30 to 19:00 Monday to Friday</p>
+  <p>Check Blackboard for when CWA tutors will be there.</p>
+
+  <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+
+    <fieldset>
+      <legend>Student details</legend>
+
+     
+      <label for="studentId">Student ID</label>
+      <input type="text" id="studentId" name="studentId" 
+             required pattern="\d{7,10}" 
+             placeholder="Enter 7-10 digit ID">
+
+      <br><br>
+
+      
+      <label for="givenName">Given Name</label>
+      <input type="text" id="givenName" name="givenName" 
+             required maxlength="15" pattern="[A-Za-z]+">
+
+      <label for="familyName">Family Name</label>
+      <input type="text" id="familyName" name="familyName" 
+             required maxlength="15" pattern="[A-Za-z]+">
+    </fieldset>
+
+    <br>
+
+    
+    <fieldset>
+      <legend>Your Unit</legend>
+
+      <input type="radio" id="cos10101" name="unit" value="COS10101" required>
+      <label for="cos10101">COS10101</label>
+
+      <input type="radio" id="cos60004" name="unit" value="COS60004">
+      <label for="cos60004">COS60004</label>
+
+      <input type="radio" id="cos60007" name="unit" value="COS60007">
+      <label for="cos60007">COS60007</label>
+    </fieldset>
+
+    <br>
+
+    
+    <label for="tutor">Your Tutor</label>
+    <select id="tutor" name="tutor" required>
+      <option value="">-- Please Select --</option>
+      <option value="N/A">N/A</option>
+      <option value="N/A">N/A</option>
+      <option value="N/A">N/A</option>
+    </select>
+
+    <br><br>
+
+    
+    <fieldset>
+      <legend>Issue</legend>
+
+      <input type="checkbox" id="html" name="issue" value="HTML" checked>
+      <label for="html">HTML</label>
+
+      <input type="checkbox" id="css" name="issue" value="CSS">
+      <label for="css">CSS</label>
+
+      <input type="checkbox" id="javascript" name="issue" value="JavaScript">
+      <label for="javascript">JavaScript</label>
+
+      <input type="checkbox" id="php" name="issue" value="PHP">
+      <label for="php">PHP</label>
+
+      <input type="checkbox" id="mysql" name="issue" value="MySQL">
+      <label for="mysql">MySQL</label>
+    </fieldset>
+
+    <br>
+
+   
+    <label for="description">Description of Issue</label><br>
+    <textarea id="description" name="description" placeholder="Write description of your problem here..."></textarea>
+
+    <br><br>
+
+   
+    <fieldset>
+      <legend>Preferred Date / Time</legend>
+
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date" placeholder="dd/mm/yyyy">
+
+      <label for="time">Time</label>
+      <input type="time" id="time" name="time" placeholder="00:00">
+    </fieldset>
+
+    <br>
+
+    <button type="submit">Book</button>
+    <button type="reset">Reset Form</button>
+
+  </form>
+
 </body>
 </html>
